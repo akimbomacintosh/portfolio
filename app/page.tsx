@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-5xl px-6 text-[17px]">
       {/* Hero */}
-      <section className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-neutral-100/70 py-14 dark:bg-neutral-900/30">
+      <section className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-neutral-900/30 py-14">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid gap-10 sm:grid-cols-[1fr_auto] sm:items-center">
   <div className="space-y-6">
@@ -69,7 +69,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-3">
           <a
             href="/contact"
-            className="rounded-xl border border-neutral-200 px-5 py-2.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-xl border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
           >
             Contact Me
           </a>
@@ -80,7 +80,7 @@ export default function Home() {
             <img
               src="/me.jpg"
               alt="Photo of Joshua Hall"
-              className="h-40 w-40 rounded-full object-cover ring-1 ring-neutral-200 dark:ring-neutral-800 sm:h-44 sm:w-44"
+              className="h-40 w-40 rounded-full object-cover ring-1 ring-neutral-800 sm:h-44 sm:w-44"
             />
           </div>
         </div>
@@ -109,15 +109,15 @@ export default function Home() {
             <a
               key={s.title}
               href={s.href}
-              className="shimmer-box group rounded-none border border-neutral-200 p-6 transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
+              className="shimmer-box group rounded-none border border-neutral-800 p-6 transition-colors hover:border-neutral-700 hover:bg-neutral-900"
             >
               <div className="flex items-start justify-between gap-3">
-                <h3 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">{s.title}</h3>
-                <span className="text-neutral-400 transition-colors group-hover:text-neutral-600 dark:group-hover:text-neutral-300">
+                <h3 className="text-lg font-medium text-neutral-100">{s.title}</h3>
+                <span className="text-neutral-400 transition-colors group-hover:text-neutral-300">
                   →
                 </span>
               </div>
-              <p className="mt-2 text-base leading-7 text-neutral-600 dark:text-neutral-400">{s.desc}</p>
+              <p className="mt-2 text-base leading-7 text-neutral-400">{s.desc}</p>
             </a>
           ))}
         </div>
@@ -130,25 +130,25 @@ export default function Home() {
 
         <div className="mt-6 flex flex-wrap gap-3">
           <a
-            className="rounded-none border border-neutral-200 px-5 py-2.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
             href="#"
           >
             GitHub
           </a>
           <a
-            className="rounded-none border border-neutral-200 px-5 py-2.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
             href="#"
           >
             LinkedIn
           </a>
           <a
-            className="rounded-none border border-neutral-200 px-5 py-2.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
             href="https://www.instagram.com/jjoshuahall.vid/"
           >
             Instagram
           </a>
           <a
-            className="rounded-none border border-neutral-200 px-5 py-2.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
             href="https://www.tiktok.com/@joshuahall.vid?is_from_webapp=1&sender_device=pc"
           >
             TikTok
