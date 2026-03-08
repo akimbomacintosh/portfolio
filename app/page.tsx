@@ -69,7 +69,8 @@ export default function Home() {
         <div className="flex flex-wrap gap-3">
           <a
             href="/contact"
-            className="rounded-xl border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
+            className="rounded-xl px-5 py-2.5 text-base font-medium text-white transition-opacity hover:opacity-90"
+            style={{ background: "linear-gradient(to right, #1034a6, #1D4ED8, #0e7490)" }}
           >
             Contact Me
           </a>
@@ -89,10 +90,12 @@ export default function Home() {
 
       {/* About */}
       <section className="mt-16">
-        <h2 className="text-3xl font-semibold tracking-tight">Welcome.</h2>
-        <div className="mt-5 max-w-3xl space-y-4 text-neutral-600 leading-8">
+        <h2 className="text-3xl font-semibold tracking-tight">
+          Welcome.
+        </h2>
+        <div className="mt-5 space-y-4 text-neutral-600 leading-8">
           <p>
-            Welcome to my offical landing page. This is space for me to share my work on and off campus. Below, you can explore my passion in creativity and harnessing it within my engineering career. Whether it's garnering twenty thousand combined followers, tracking your en-route flight to SeaTac out of my bedroom, designing an electronic speed control, producing music, or building a website, I am eager to share my interests with you. 
+            Welcome to my offical landing page. This is the space for me to share my work on and off campus. Below, you can explore my passion in creativity and harnessing it within my engineering career. Whether it's garnering twenty thousand combined followers, tracking your en-route flight to SeaTac out of my bedroom, designing an electronic speed control, producing music, or building a website, I am eager to share my unique interests with you. 
           </p>
         </div>
       </section>
@@ -113,7 +116,7 @@ export default function Home() {
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-lg font-medium text-neutral-100">{s.title}</h3>
-                <span className="text-neutral-400 transition-colors group-hover:text-neutral-300">
+                <span className="text-neutral-400">
                   →
                 </span>
               </div>
@@ -131,13 +134,13 @@ export default function Home() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a
             className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
-            href="#"
+            href="https://github.com/akimbomacintosh"
           >
             GitHub
           </a>
           <a
             className="rounded-none border border-neutral-800 px-5 py-2.5 text-base font-medium text-neutral-100 transition-colors hover:bg-neutral-900"
-            href="#"
+            href="https://www.linkedin.com/in/jswhall"
           >
             LinkedIn
           </a>
