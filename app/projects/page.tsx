@@ -1,72 +1,101 @@
+import fs from "fs";
+import path from "path";
+import ProjectImage from "../components/ProjectImage";
+
+export const dynamic = "force-dynamic";
+
 type Project = {
-  id: string;
+  id: string;        // used for the URL anchor (#id) — change freely
+  folder: string;    // must match the folder name in content/projects/ — do not change
   title: string;
   dateStart: string;
   dateEnd: string;
-  problem: string;
-  built: string;
-  role: string;
-  takeaways: string[];
-  images: { src: string; caption: string }[];
 };
+
+type TextBlock = { type: "paragraph"; text: string };
+type ImageBlock = { type: "image"; src: string; float: "left" | "right"; caption: string; size: "small" | "medium" | "half" | "full" };
+type ContentBlock = TextBlock | ImageBlock;
 
 const projects: Project[] = [
   {
-    id: "project-1",
-    title: "Project Title One",
-    dateStart: "Jan 2024",
-    dateEnd: "Mar 2024",
-    problem: "Placeholder",
-    built: "Placeholder",
-    role: "Placeholder",
-    takeaways: ["Placeholder", "Placeholder", "Placeholder"],
-    images: [],
+    id: "ads-b-antenna",
+    folder: "ads-b-antenna",
+    title: "Automatic Dependent Surveillance-Broadcast Antenna",
+    dateStart: "Apr 2025",
+    dateEnd: "Present",
   },
   {
-    id: "project-2",
-    title: "Project Title Two",
-    dateStart: "Apr 2024",
-    dateEnd: "Jun 2024",
-    problem: "Placeholder",
-    built: "Placeholder",
-    role: "Placeholder",
-    takeaways: ["Placeholder", "Placeholder", "Placeholder"],
-    images: [],
+    id: "esc",
+    folder: "project-2",
+    title: "STM32 4-in-1 ESC w/ Integrated 5A Buck Converter",
+    dateStart: "Oct 2025",
+    dateEnd: "Present",
   },
   {
-    id: "project-3",
-    title: "Project Title Three",
-    dateStart: "Jul 2024",
-    dateEnd: "Sep 2024",
-    problem: "Placeholder",
-    built: "Placeholder",
-    role: "Placeholder",
-    takeaways: ["Placeholder", "Placeholder", "Placeholder"],
-    images: [],
+    id: "line-following-robot",
+    folder: "project-3",
+    title: "Arduino-Powered Autonomus Line Following Robot",
+    dateStart: "Sep 2025",
+    dateEnd: "Dec 2025",
   },
   {
-    id: "project-4",
-    title: "Project Title Four",
-    dateStart: "Oct 2024",
-    dateEnd: "Dec 2024",
-    problem: "Placeholder",
-    built: "Placeholder",
-    role: "Placeholder",
-    takeaways: ["Placeholder", "Placeholder", "Placeholder"],
-    images: [],
+    id: "networking",
+    folder: "project-4",
+    title: "Network Management w/ Multiband Optimizations & Pi-Hole",
+    dateStart: "Sep 2025",
+    dateEnd: "Present",
   },
   {
-    id: "project-5",
-    title: "Project Title Five",
+    id: "website",
+    folder: "project-5",
+    title: "Portfolio Website using Next.js & Vercel",
     dateStart: "Jan 2025",
     dateEnd: "Present",
-    problem: "Placeholder",
-    built: "Placeholder",
-    role: "Placeholder",
-    takeaways: ["Placeholder", "Placeholder", "Placeholder"],
-    images: [],
   },
 ];
+
+// Parses a .txt file into paragraphs and inline images.
+// Images can appear anywhere — no blank lines needed around them.
+// Syntax: [[image:/path/to/image.jpg:right:Caption text]]
+//         [[image:/path/to/image.jpg:left:Caption text]]
+// Syntax: [[image:/path.jpg:right:Caption]]
+//         [[image:/path.jpg:right:Caption:size]]   (small | medium | half | full)
+const IMAGE_RE = /\[\[image:([^:]+):(left|right):([^\]:]+)(?::(small|medium|half|full))?\]\]/g;
+
+function readContent(folder: string, file: string): ContentBlock[] {
+  const filePath = path.join(process.cwd(), "content", "projects", folder, file);
+  const raw = fs.readFileSync(filePath, "utf-8").replace(/\r/g, "").trim();
+  const blocks: ContentBlock[] = [];
+
+  let last = 0;
+  for (const match of raw.matchAll(IMAGE_RE)) {
+    const before = raw.slice(last, match.index).trim();
+    if (before) {
+      before.split(/\n\n+/).forEach((chunk) => {
+        const text = chunk.replace(/\n/g, " ").trim();
+        if (text) blocks.push({ type: "paragraph", text });
+      });
+    }
+    blocks.push({ type: "image", src: match[1].trim(), float: match[2] as "left" | "right", caption: match[3].trim(), size: (match[4] ?? "medium") as "small" | "medium" | "half" | "full" });
+    last = (match.index ?? 0) + match[0].length;
+  }
+
+  const after = raw.slice(last).trim();
+  if (after) {
+    after.split(/\n\n+/).forEach((chunk) => {
+      const text = chunk.replace(/\n/g, " ").trim();
+      if (text) blocks.push({ type: "paragraph", text });
+    });
+  }
+
+  return blocks;
+}
+
+function readList(folder: string, file: string): string[] {
+  const filePath = path.join(process.cwd(), "content", "projects", folder, file);
+  const raw = fs.readFileSync(filePath, "utf-8").trim();
+  return raw.split(/\n/).map((l) => l.trim()).filter(Boolean);
+}
 
 export default function Projects() {
   return (
@@ -101,92 +130,86 @@ export default function Projects() {
 
       {/* Project sections */}
       <div className="mt-20 space-y-32">
-        {projects.map((p) => (
-          <article key={p.id} id={p.id} className="scroll-mt-20">
+        {projects.map((p) => {
+          const problem = readContent(p.folder, "problem.txt");
+          const built = readContent(p.folder, "built.txt");
+          const role = readContent(p.folder, "role.txt");
+          const takeaways = readList(p.folder, "takeaways.txt");
 
-            {/* Project header */}
-            <div className="flex items-start justify-between gap-6 border-t-2 border-neutral-700 pt-8">
-              <div>
-                <h2 className="text-3xl font-semibold tracking-tight">{p.title}</h2>
-              </div>
-              <div className="shrink-0 flex items-center gap-2 text-sm text-neutral-500">
-                <span>{p.dateStart}</span>
-                <span className="text-neutral-700">→</span>
-                <span>{p.dateEnd}</span>
-              </div>
-            </div>
+          return (
+            <article key={p.id} id={p.id} className="scroll-mt-20">
 
-            {/* Four content sections */}
-            <div className="mt-10 space-y-10">
-
-              <Section label="Problem / Motivation" body={p.problem} />
-              <Section label="What I Built" body={p.built} />
-
-              {/* Images slot — add objects to the images array to populate */}
-              {p.images.length > 0 && (
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {p.images.map((img, j) => (
-                    <figure key={j}>
-                      <img
-                        src={img.src}
-                        alt={img.caption}
-                        className="w-full border border-neutral-800 object-cover"
-                      />
-                      <figcaption className="mt-2 text-sm text-neutral-500 leading-6">
-                        {img.caption}
-                      </figcaption>
-                    </figure>
-                  ))}
+              {/* Project header */}
+              <div className="flex items-start justify-between gap-6 border-t-2 border-neutral-700 pt-8">
+                <div>
+                  <h2 className="text-3xl font-semibold tracking-tight">{p.title}</h2>
                 </div>
-              )}
-
-              {/* Empty image placeholder shown until images are added */}
-              {p.images.length === 0 && (
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {[0, 1].map((j) => (
-                    <figure key={j}>
-                      <div className="w-full aspect-video border border-dashed border-neutral-800 flex items-center justify-center text-sm text-neutral-700">
-                        Image placeholder
-                      </div>
-                      <figcaption className="mt-2 text-sm text-neutral-600 leading-6 italic">
-                        Caption — describe what this image shows.
-                      </figcaption>
-                    </figure>
-                  ))}
+                <div className="shrink-0 flex items-center gap-2 text-sm text-neutral-500">
+                  <span>{p.dateStart}</span>
+                  <span className="text-neutral-700">→</span>
+                  <span>{p.dateEnd}</span>
                 </div>
-              )}
-
-              <Section label="My Role &amp; Process" body={p.role} />
-
-              <div>
-                <p className="text-xs uppercase tracking-widest text-neutral-500 mb-4">
-                  Key Technical Takeaways
-                </p>
-                <ul className="space-y-2">
-                  {p.takeaways.map((t, j) => (
-                    <li key={j} className="flex gap-3 text-neutral-400 leading-7">
-                      <span className="mt-1 text-neutral-700 shrink-0">—</span>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
 
-            </div>
-          </article>
-        ))}
+              {/* Four content sections */}
+              <div className="mt-10 space-y-10">
+                <Section label="Problem / Motivation" body={problem} />
+                <Section label="What I Built" body={built} />
+                <Section label="My Role & Process" body={role} />
+
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-neutral-500 mb-4">
+                    Key Technical Takeaways
+                  </p>
+                  <ul className="space-y-2">
+                    {takeaways.map((t, j) => (
+                      <li key={j} className="flex gap-3 text-neutral-400 leading-7">
+                        <span className="mt-1 text-neutral-700 shrink-0">—</span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </main>
   );
 }
 
-function Section({ label, body }: { label: string; body: string }) {
+function Section({ label, body }: { label: string; body: ContentBlock[] }) {
   return (
     <div>
       <p className="text-xs uppercase tracking-widest text-neutral-500 mb-3">
         {label}
       </p>
-      <p className="text-neutral-400 leading-8">{body}</p>
+      <div className="overflow-hidden">
+        {body.map((block, i) => {
+          if (block.type === "image") {
+            const sizeClass =
+              block.size === "small"  ? "w-56 sm:w-72" :
+              block.size === "medium" ? "w-64 sm:w-[38%]" :
+              block.size === "half"   ? "w-[48%]" :
+              "w-full";
+            return (
+              <ProjectImage
+                key={i}
+                src={block.src}
+                caption={block.caption}
+                float={block.float}
+                sizeClass={sizeClass}
+              />
+            );
+          }
+          return (
+            <p key={i} className="text-neutral-400 leading-8 mb-4">
+              {block.text}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 }

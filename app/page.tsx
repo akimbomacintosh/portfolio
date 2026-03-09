@@ -69,8 +69,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-3">
           <a
             href="/contact"
-            className="rounded-xl px-5 py-2.5 text-base font-medium text-white transition-opacity hover:opacity-90"
-            style={{ background: "linear-gradient(to right, #1034a6, #1D4ED8, #0e7490)" }}
+            className="contact-btn rounded-xl px-5 py-2.5 text-base font-medium text-white"
           >
             Contact Me
           </a>

@@ -3,7 +3,7 @@ export default function Music() {
     {
       title: "Track / Project Title",
       date: "2024",
-      description: "Context about this release — genre, tools used, story behind it.",
+      description: "Placeholder",
       image: null,       // e.g. "/music/cover-art.jpg" — drop in /public
       embedUrl: null,    // e.g. Spotify/SoundCloud embed URL
     },

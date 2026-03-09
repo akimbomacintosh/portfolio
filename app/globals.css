@@ -26,6 +26,30 @@ body {
 }
 
 
+/* Contact Me button — gradient border + hover glow */
+.contact-btn {
+  position: relative;
+  background: transparent;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(to right, #1034a6, #1D4ED8, #0e7490);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.contact-btn:hover {
+  box-shadow: 0 0 16px 2px rgba(29, 78, 216, 0.55), 0 0 32px 4px rgba(14, 116, 144, 0.25);
+}
+
 @keyframes shimmer-sweep {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(250%); }

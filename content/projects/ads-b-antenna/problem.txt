@@ -1,0 +1,7 @@
+[[image:/images/projects/ads-b-antenna/dormView.jpg:right:My dorm view on a mid spring evening:medium]]
+At the beginning of my freshman year at UW, my dorm had a spectacular elevated
+view of downtown Seattle and Mt. Rainier. While this was exciting, what really got me pumped was that our building was situated 
+directly below the in-bound flight path for all arrivals at Sea-Tac airport. Plane spotting is one of my favorite things to do, so I frequently used the flight
+tracker app, FlightRadar24, to guess-and-check my spotting skills. But as a broke college student with no desire to pay for 
+a premium subscription, I was annoyingly bombarded with ads and minimal data on aircraft specs. I wanted a way to track planes
+24/7 that was low-cost, accurate, and unique to my convienient location.
