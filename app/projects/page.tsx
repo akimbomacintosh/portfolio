@@ -104,7 +104,7 @@ export default function Projects() {
       {/* Page header */}
       <h1 className="mt-6 text-4xl font-semibold tracking-tight">Projects</h1>
       <p className="mt-4 text-neutral-400 leading-8 max-w-2xl">
-        Selected builds with context, results, and process notes.
+        High-Level Overviews and Executive Summaries.
       </p>
 
       {/* Jump-to navigation */}
