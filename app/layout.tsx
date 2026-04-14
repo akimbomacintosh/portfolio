@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavBar from "./components/NavBar";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Joshua Hall",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <footer className="mx-auto max-w-4xl px-6 py-10 text-sm text-neutral-500">
           © {new Date().getFullYear()} Joshua Hall
         </footer>
+        <Analytics />
       </body>
     </html>
   );
