@@ -3,8 +3,8 @@ export default function Contact() {
     {
       label: "Personal Email",
       sublabel: "Preferred",
-      value: "jh.accts@comcast.net",
-      href: "mailto:jh.accts@comcast.net",
+      value: "joshua.sw.hall@gmail.com",
+      href: "mailto:joshua.sw.hall@gmail.com",
     },
     {
       label: "School Email",
@@ -21,28 +21,28 @@ export default function Contact() {
     {
       label: "Instagram",
       sublabel: null,
-      value: "@jjoshuahall.vid",
-      href: "https://www.instagram.com/jjoshuahall.vid/",
+      value: "@joshuahall.vid",
+      href: "https://www.instagram.com/joshuahall.vid/",
     },
   ];
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-900">← Back</a>
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-100">← Back</a>
 
-      <h1 className="mt-6 text-4xl font-semibold tracking-tight">Contact.</h1>
+      <h1 className="mt-6 text-5xl font-bold tracking-tight">Contact</h1>
       <p className="mt-4 max-w-2xl text-neutral-600 leading-8">
         The best ways to reach me.
       </p>
 
-      <div className="mt-12 divide-y divide-neutral-200 dark:divide-neutral-800">
+      <div className="mt-12 divide-y divide-neutral-800">
         {contacts.map((c) => (
           <div key={c.label} className="flex items-center justify-between gap-6 py-6">
             <div>
               <div className="flex items-center gap-2">
                 <p className="font-medium text-neutral-900 dark:text-neutral-100">{c.label}</p>
                 {c.sublabel && (
-                  <span className="text-xs text-neutral-500 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5">
+                  <span className="text-xs text-neutral-500 border border-neutral-700 px-1.5 py-0.5">
                     {c.sublabel}
                   </span>
                 )}
@@ -53,7 +53,7 @@ export default function Contact() {
               href={c.href}
               target={c.href.startsWith("http") ? "_blank" : undefined}
               rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="shrink-0 border border-neutral-200 dark:border-neutral-800 px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+              className="shrink-0 border border-neutral-800 px-4 py-2 text-sm text-neutral-300 hover:bg-neutral-900 transition-colors"
             >
               {c.href.startsWith("mailto") ? "Send email" : "Visit"}
             </a>

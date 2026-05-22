@@ -11,23 +11,23 @@ export default function Videography() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-900">← Back</a>
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-100">← Back</a>
 
-      <h1 className="mt-6 text-4xl font-semibold tracking-tight">Videography / Photography</h1>
+      <h1 className="mt-6 text-5xl font-bold tracking-tight">Videography / Photography</h1>
       <p className="mt-4 max-w-2xl text-neutral-600 leading-8">
         Edits, shoots, and visual storytelling.
       </p>
 
       <div className="mt-12 space-y-16">
         {work.map((item) => (
-          <article key={item.title} className="border-t border-neutral-200 pt-10">
-            <h2 className="text-2xl font-semibold tracking-tight">{item.title}</h2>
+          <article key={item.title} className="border-t border-neutral-700 pt-10">
+            <h2 className="text-2xl font-bold tracking-tight text-white">{item.title}</h2>
             <p className="mt-1 text-sm text-neutral-500">{item.date}</p>
             <p className="mt-4 max-w-3xl text-neutral-600 leading-8">{item.description}</p>
 
             {/* Video embed — paste a YouTube/Vimeo embed URL */}
             {item.videoUrl && (
-              <div className="mt-8 aspect-video w-full max-w-3xl overflow-hidden border border-neutral-200">
+              <div className="mt-8 aspect-video w-full max-w-3xl overflow-hidden border border-neutral-800">
                 <iframe
                   src={item.videoUrl}
                   className="h-full w-full"
@@ -46,7 +46,7 @@ export default function Videography() {
                     key={i}
                     src={src}
                     alt={`${item.title} ${i + 1}`}
-                    className="w-full border border-neutral-200 object-cover aspect-[4/3]"
+                    className="w-full border border-neutral-800 object-cover aspect-[4/3]"
                   />
                 ))}
               </div>

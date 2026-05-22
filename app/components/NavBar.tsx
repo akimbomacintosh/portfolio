@@ -8,7 +8,7 @@ const links = [
   { label: "Experience", href: "/experience" },
   { label: "Music", href: "/music" },
   { label: "Videography", href: "/videography" },
-  { label: "Files", href: "/files" },
+  { label: "Downloads", href: "/files" },
 ];
 
 export default function NavBar() {
@@ -40,7 +40,7 @@ export default function NavBar() {
           ))}
           <a
             href="/contact"
-            className="ml-2 border border-neutral-700 px-3 py-1.5 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
+            className="ml-2 rounded border border-neutral-700 px-3 py-1.5 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
           >
             Contact
           </a>

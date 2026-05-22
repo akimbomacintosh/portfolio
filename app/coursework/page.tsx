@@ -32,19 +32,19 @@ export default function Coursework() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-900">← Back</a>
+      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-100">← Back</a>
 
-      <h1 className="mt-6 text-4xl font-semibold tracking-tight">Coursework</h1>
+      <h1 className="mt-6 text-5xl font-bold tracking-tight">Coursework</h1>
       <p className="mt-4 max-w-2xl text-neutral-600 leading-8">
-        Learn about the courses I've taken that go beyond the fundamentals. The coursework that I have enjoyed the most - and challenged me more than others - is the basics of circuit theory with prof. Hameed. Applying lapace transforms to to 1st and 2nd order circuits has opened the door into 
+        Learn about the courses I've taken that go beyond the fundamentals. The coursework that I have enjoyed the most - and challenged me more than others - is the basics of circuit theory with prof. Hameed. Applying Laplace transforms to 1st and 2nd order circuits has opened the door into 
         audio design as we participate in labs designing multiband filters. 
       </p>
 
       <div className="mt-12 space-y-16">
         {courses.map((course) => (
-          <article key={course.code} className="border-t border-neutral-200 pt-10">
+          <article key={course.code} className="border-t border-neutral-700 pt-10">
             <p className="text-sm text-neutral-500">{course.code}</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-tight">{course.title}</h2>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-white">{course.title}</h2>
             <p className="mt-4 max-w-3xl text-neutral-600 leading-8">{course.description}</p>
 
             {course.image && (
@@ -52,7 +52,7 @@ export default function Coursework() {
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full max-w-2xl border border-neutral-200 object-cover"
+                  className="w-full max-w-2xl border border-neutral-800 object-cover"
                 />
               </div>
             )}
@@ -61,7 +61,7 @@ export default function Coursework() {
               <div className="mt-8">
                 <iframe
                   src={course.pdf}
-                  className="h-[800px] w-full border border-neutral-200"
+                  className="h-[800px] w-full border border-neutral-800"
                   title={`${course.title} PDF`}
                 />
               </div>

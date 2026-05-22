@@ -1,5 +1,8 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
   title: "Joshua Hall",
@@ -12,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${inter.variable}`}>
       <body className="text-neutral-100">
         <NavBar />
         {children}

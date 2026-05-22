@@ -41,7 +41,7 @@ export default function Home() {
   <div className="space-y-6">
         <p className="text-base text-neutral-500">A Personal Portfolio</p>
 
-        <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
+        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
           Joshua Hall
         </h1>
         <div className="flex items-center gap-2 text-base text-neutral-500">
@@ -61,7 +61,7 @@ export default function Home() {
           <span>Seattle, WA</span>
         </div>
 
-        <p className="max-w-2xl text-xl leading-8 text-neutral-600">
+        <p className="max-w-2xl text-xl leading-8 text-neutral-500">
           Electrical &amp; Computer Engineering student at the University of
           Washington pursuing interests in audio hardware and aircraft technology.
         </p>
@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="shrink-0 self-center">
             <img
-              src="/me.jpg"
+              src="/menew.jpg"
               alt="Photo of Joshua Hall"
               className="h-40 w-40 rounded-full object-cover ring-1 ring-neutral-800 sm:h-44 sm:w-44"
             />
@@ -89,20 +89,20 @@ export default function Home() {
 
       {/* About */}
       <section className="mt-16">
-        <h2 className="text-3xl font-semibold tracking-tight">
+        <h2 className="text-3xl font-bold tracking-tight text-white">
           Welcome.
         </h2>
-        <div className="mt-5 space-y-4 text-neutral-600 leading-8">
+        <div className="mt-5 space-y-4 text-neutral-500 leading-8">
           <p>
-            Welcome to my offical landing page. This is the space for me to share my work on and off campus. Below, you can explore my passion in creativity and harnessing it within my engineering career. Whether it's garnering twenty thousand combined followers, tracking your en-route flight to SeaTac out of my bedroom, designing an electronic speed control, producing music, or building a website, I am eager to share my unique interests with you. 
+            Welcome to my official landing page. This is the space for me to share my work on and off campus. Below, you can explore my passion in creativity and harnessing it within my engineering career. Whether it's garnering twenty thousand combined followers, tracking your en-route flight to SeaTac out of my bedroom, designing an electronic speed control, producing music, or building a website, I am eager to share my unique interests with you. 
           </p>
         </div>
       </section>
 
       {/* Navigation Cards */}
       <section className="mt-16">
-        <h2 className="text-3xl font-semibold tracking-tight">Explore.</h2>
-        <p className="mt-4 max-w-2xl text-neutral-600">
+        <h2 className="text-3xl font-bold tracking-tight text-white">Explore.</h2>
+        <p className="mt-4 max-w-2xl text-neutral-500">
           See what I’ve been up to:
         </p>
 
@@ -115,11 +115,11 @@ export default function Home() {
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-lg font-medium text-neutral-100">{s.title}</h3>
-                <span className="text-neutral-400">
+                <span className="text-neutral-500">
                   →
                 </span>
               </div>
-              <p className="mt-2 text-base leading-7 text-neutral-400">{s.desc}</p>
+              <p className="mt-2 text-base leading-7 text-neutral-500">{s.desc}</p>
             </a>
           ))}
         </div>
@@ -127,7 +127,7 @@ export default function Home() {
 
       {/* Socials */}
       <section id="social" className="mt-16">
-        <h2 className="text-3xl font-semibold tracking-tight">Social media.</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-white">Social media.</h2>
 
 
         <div className="mt-6 flex flex-wrap gap-3">
