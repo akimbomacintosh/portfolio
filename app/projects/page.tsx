@@ -69,21 +69,6 @@ const projects: Project[] = [
     dateEnd: "Present",
   },
   {
-    id: "line-following-robot",
-    folder: "line-following-robot",
-    title: "Arduino-Powered Line Following Robot",
-    tagline: "An autonomous robot that follows a line using a custom photoresistor PCB sensor array and a PID control loop programmed via Arduino IDE",
-    images: [
-      "/images/projects/line-following-robot/IMG_4023.JPG",
-      "/images/projects/line-following-robot/IMG_4266 2.JPG",
-      "/images/projects/line-following-robot/IMG_4267 2.jpg",
-    ],
-    tags: ["Arduino", "PID Control", "PCB Design", "Soldering", "3D Printing"],
-    isGroupProject: true,
-    dateStart: "Sep 2025",
-    dateEnd: "Dec 2025",
-  },
-  {
     id: "yagi-uda-antenna",
     folder: "yagi-uda-antenna",
     title: "Yagi-Uda Directional Wi-Fi Antennas",
@@ -135,6 +120,50 @@ const projects: Project[] = [
     isGroupProject: false,
     dateStart: "Apr 2026",
     dateEnd: "Present",
+  },
+];
+
+type LabProject = {
+  id: string;
+  title: string;
+  courseCode: string;
+  description: string;
+  images: string[];
+  tags: string[];
+  dateEnd: string;
+};
+
+const labProjects: LabProject[] = [
+  {
+    id: "line-following-robot",
+    title: "Autonomous Line-Following Robot",
+    courseCode: "EE 201",
+    description: "An autonomous robot that follows a line using a custom photoresistor PCB sensor array and a PID control loop programmed via Arduino IDE. Built as a group final project.",
+    images: [
+      "/images/projects/line-following-robot/IMG_4023.JPG",
+      "/images/projects/line-following-robot/IMG_4266 2.JPG",
+      "/images/projects/line-following-robot/IMG_4267 2.jpg",
+    ],
+    tags: ["Arduino", "PID Control", "PCB Design", "Soldering", "3D Printing"],
+    dateEnd: "Dec 2025",
+  },
+  {
+    id: "tri-band-filter",
+    title: "Tri-Band Audio Filter",
+    courseCode: "EE 233",
+    description: "A multi-band active audio filter designed using op-amps and passive components, applying Laplace transform analysis for low-pass, band-pass, and high-pass filter stages.",
+    images: [],
+    tags: ["Filter Design", "Op-Amps", "Circuit Theory", "Laplace Transforms"],
+    dateEnd: "Mar 2026",
+  },
+  {
+    id: "ac-dc-converter",
+    title: "AC/DC Converter & Booster",
+    courseCode: "EE 331",
+    description: "An AC to DC rectifier circuit with a boost converter stage, designed and tested as a final lab project applying semiconductor device theory.",
+    images: [],
+    tags: ["Power Electronics", "Rectifier", "Boost Converter", "Semiconductors"],
+    dateEnd: "Jun 2026",
   },
 ];
 
@@ -237,6 +266,25 @@ export default function Projects() {
             </li>
           ))}
         </ol>
+
+        <details className="group mt-5 pt-4 border-t border-neutral-800">
+          <summary className="flex items-center gap-2 pl-6 mb-0 cursor-pointer list-none group-open:mb-3">
+            <svg className="w-3 h-3 text-neutral-600 transition-transform duration-200 group-open:rotate-90" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
+            </svg>
+            <span className="text-xs uppercase tracking-widest text-neutral-600">Lab Final Projects</span>
+          </summary>
+          <div className="space-y-2">
+            {labProjects.map((p) => (
+              <div key={p.id} className="flex items-baseline gap-4 pl-8">
+                <span className="text-xs text-neutral-700 shrink-0 w-14">{p.courseCode}</span>
+                <a href={`#${p.id}`} className="text-neutral-500 hover:text-white hover:underline transition-colors text-sm">
+                  {p.title}
+                </a>
+              </div>
+            ))}
+          </div>
+        </details>
       </nav>
 
       {/* Project sections */}
@@ -297,6 +345,41 @@ export default function Projects() {
             </article>
           );
         })}
+      </div>
+
+      {/* Lab Final Projects */}
+      <div className="mt-32">
+        <div className="flex items-center gap-6 mb-16">
+          <div className="h-px flex-1 bg-neutral-800" />
+          <p className="text-xs uppercase tracking-widest text-neutral-500 shrink-0">Lab Final Projects — Academic Coursework</p>
+          <div className="h-px flex-1 bg-neutral-800" />
+        </div>
+        <div className="space-y-12">
+          {labProjects.map((p, i) => (
+            <article key={p.id} id={p.id} className={`scroll-mt-20 pt-8 ${i > 0 ? "border-t border-neutral-800" : ""}`}>
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <span className="inline-block text-xs font-mono text-neutral-500 border border-neutral-800 px-2 py-0.5 mb-2">{p.courseCode}</span>
+                  <h2 className="text-2xl font-bold tracking-tight text-white">{p.title}</h2>
+                </div>
+                <span className="text-xs text-neutral-600 shrink-0 pt-1">{p.dateEnd}</span>
+              </div>
+              <p className="mt-4 text-neutral-400 leading-8 max-w-3xl">{p.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {p.tags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-sm text-neutral-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {p.images.length > 0 && (
+                <div className="mt-6">
+                  <PhotoCollage images={p.images} />
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
       </div>
     </main>
   );
