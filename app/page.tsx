@@ -66,10 +66,13 @@ export default function Home() {
 
           {/* Subtitle — fades in after name completes */}
           <p
-            className="mt-6 uppercase tracking-[0.3em] text-neutral-500"
+            className="mt-6 uppercase tracking-[0.3em] text-neutral-500 leading-relaxed"
             style={{ fontSize: "clamp(0.65rem, 1.3vw, 1rem)", opacity: 0, animation: "fade-in-sub 0.9s ease 1.1s forwards" }}
           >
-            Electrical &amp; Computer Engineer &nbsp;·&nbsp; University of Washington
+            <span className="whitespace-nowrap">Electrical &amp; Computer Engineer</span>
+            <span className="hidden sm:inline"> &nbsp;·&nbsp; </span>
+            <br className="sm:hidden" />
+            <span className="whitespace-nowrap">University of Washington</span>
           </p>
         </div>
 
