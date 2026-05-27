@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "Coursework", href: "/coursework" },
@@ -13,9 +14,24 @@ const links = [
 
 export default function NavBar() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.7);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const visible = !isHome || scrolled;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-800 bg-black/80 backdrop-blur-sm">
+    <header
+      className={`fixed top-0 z-50 w-full border-b border-neutral-800 bg-black/90 backdrop-blur-sm transition-all duration-300 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+      }`}
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-3">
         <a
           href="/"
