@@ -42,7 +42,11 @@ export default function Contact() {
               <div className="flex items-center gap-2">
                 <p className="font-medium text-neutral-900 dark:text-neutral-100">{c.label}</p>
                 {c.sublabel && (
-                  <span className="text-xs text-neutral-500 border border-neutral-700 px-1.5 py-0.5">
+                  <span className={
+                    c.sublabel === "Preferred"
+                      ? "preferred-badge text-xs px-2 py-0.5"
+                      : "text-xs text-neutral-500 border border-neutral-700 px-1.5 py-0.5"
+                  }>
                     {c.sublabel}
                   </span>
                 )}
