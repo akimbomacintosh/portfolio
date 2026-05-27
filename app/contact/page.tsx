@@ -47,7 +47,8 @@ export default function Contact() {
                       ? "preferred-badge text-xs px-2 py-0.5"
                       : "text-xs text-neutral-500 border border-neutral-700 px-1.5 py-0.5"
                   }>
-                    {c.sublabel}
+                    <span className="sm:hidden">UW</span>
+                    <span className="hidden sm:inline">{c.sublabel}</span>
                   </span>
                 )}
               </div>

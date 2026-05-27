@@ -21,12 +21,12 @@ export default function Home() {
       href: "/music",
     },
     {
-      title: "Videography/Photography",
+      title: "Videography",
       desc: "A glimpse into how I see the world. ",
       href: "/videography",
     },
     {
-      title: "Relevant Files",
+      title: "Downloads",
       desc: "Resume, transcripts, and useful documents for reference.",
       href: "/files",
     },
