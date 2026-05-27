@@ -39,7 +39,7 @@ export default function Home() {
         <div className="w-full px-[3vw] text-center">
           <h1
             className="whitespace-nowrap font-bold leading-none tracking-tight text-black"
-            style={{ fontSize: "clamp(3rem, 13vw, 16rem)" }}
+            style={{ fontSize: "clamp(3.5rem, 15vw, 18rem)" }}
           >
             <span style={{ display: "inline-block", opacity: 0, animation: "word-from-left 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards" }}>
               Joshua
@@ -67,7 +67,7 @@ export default function Home() {
           {/* Subtitle — fades in after name completes */}
           <p
             className="mt-6 uppercase tracking-[0.3em] text-neutral-500"
-            style={{ fontSize: "clamp(0.55rem, 1.1vw, 0.875rem)", opacity: 0, animation: "fade-in-sub 0.9s ease 1.1s forwards" }}
+            style={{ fontSize: "clamp(0.65rem, 1.3vw, 1rem)", opacity: 0, animation: "fade-in-sub 0.9s ease 1.1s forwards" }}
           >
             Electrical &amp; Computer Engineer &nbsp;·&nbsp; University of Washington
           </p>
