@@ -40,7 +40,7 @@ const projects: Project[] = [
     id: "ads-b-antenna",
     folder: "ads-b-antenna",
     title: "ADS-B Receiver Antenna",
-    tagline: "Custom antenna designed to receive 1090 MGhz ADS-B signals from aircraft, utilizing Raspberry Pi hardware to decode and display tracking data. ",
+    tagline: "Custom antenna designed to receive 1090 MHz ADS-B signals from aircraft, utilizing Raspberry Pi hardware to decode and display tracking data. ",
     images: [
       "/images/projects/ads-b-antenna/1140A2CF-8E09-4C70-8238-3C5F971EEF45_1_201_a.jpeg",
       "/images/projects/ads-b-antenna/1F11099C-DB8B-4002-A626-85C9FAC4D857.jpeg",
