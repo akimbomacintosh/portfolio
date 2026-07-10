@@ -1,0 +1,19 @@
+{
+  "title": "Autonomous Line-Following Robot",
+  "order": 0,
+  "courseCode": "EE 201",
+  "description": "An autonomous robot that follows a line using a custom photoresistor PCB sensor array and a PID control loop programmed via Arduino IDE. Built as a group final project.",
+  "tags": [
+    "Arduino",
+    "PID Control",
+    "PCB Design",
+    "Soldering",
+    "3D Printing"
+  ],
+  "dateEnd": "Dec 2025",
+  "images": [
+    "/images/projects/line-following-robot/IMG_4023.JPG",
+    "/images/projects/line-following-robot/IMG_4266 2.JPG",
+    "/images/projects/line-following-robot/IMG_4267 2.jpg"
+  ]
+}

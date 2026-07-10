@@ -1,0 +1,21 @@
+{
+  "title": "Network Management w/ Multiband Optimizations & Pi-Hole",
+  "order": 4,
+  "tagline": "Home network management using a Raspberry Pi to run network-wide ad blocking and DNS management",
+  "tags": [
+    "Raspberry Pi",
+    "Pi-Hole",
+    "DNS",
+    "Networking"
+  ],
+  "isGroupProject": false,
+  "dateStart": "Sep 2025",
+  "dateEnd": "Present",
+  "overview": "Placeholder",
+  "myRole": "Placeholder",
+  "howItWorks": "Placeholder",
+  "result": "Placeholder",
+  "updates": [],
+  "images": [],
+  "videos": []
+}

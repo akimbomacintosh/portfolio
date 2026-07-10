@@ -1,0 +1,34 @@
+{
+  "heading": "Contact",
+  "intro": "The best ways to reach me.",
+  "methods": [
+    {
+      "label": "Personal Email",
+      "sublabel": "Preferred",
+      "value": "joshua.sw.hall@gmail.com",
+      "href": "mailto:joshua.sw.hall@gmail.com",
+      "buttonLabel": "Send email"
+    },
+    {
+      "label": "School Email",
+      "sublabel": "University of Washington",
+      "value": "jhall05@uw.edu",
+      "href": "mailto:jhall05@uw.edu",
+      "buttonLabel": "Send email"
+    },
+    {
+      "label": "LinkedIn",
+      "sublabel": "",
+      "value": "linkedin.com/in/jswhall",
+      "href": "https://www.linkedin.com/in/jswhall/",
+      "buttonLabel": "Visit"
+    },
+    {
+      "label": "Instagram",
+      "sublabel": "",
+      "value": "@joshuahall.vid",
+      "href": "https://www.instagram.com/joshuahall.vid/",
+      "buttonLabel": "Visit"
+    }
+  ]
+}

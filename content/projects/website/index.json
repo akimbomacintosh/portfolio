@@ -1,0 +1,26 @@
+{
+  "title": "Portfolio Website",
+  "order": 3,
+  "tagline": "This website! Built using Next.js and launched via Vercel",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vercel",
+    "VSCode"
+  ],
+  "isGroupProject": false,
+  "dateStart": "Jan 2025",
+  "dateEnd": "Present",
+  "overview": "Placeholder",
+  "myRole": "Placeholder",
+  "howItWorks": "Placeholder",
+  "result": "Placeholder",
+  "updates": [],
+  "images": [
+    "/images/projects/website/Screenshot 2026-05-14 at 12.21.01.png",
+    "/images/projects/website/Screenshot 2026-05-14 at 12.24.06.png",
+    "/images/projects/website/Screenshot 2026-05-14 at 12.24.32.png"
+  ],
+  "videos": []
+}

@@ -2,28 +2,59 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar";
 import PageWrapper from "./components/PageWrapper";
+import Notifications, { Banner } from "./components/Notifications";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { createReader } from "@keystatic/core/reader";
+import config from "../keystatic.config";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const reader = createReader(process.cwd(), config);
 
-export const metadata = {
-  title: "Joshua Hall",
-  description: "Portfolio",
-};
+export async function generateMetadata() {
+  const site = await reader.singletons.site.read();
+  return {
+    title: site?.metaTitle || "Joshua Hall",
+    description: site?.metaDescription || "Portfolio",
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [site, notif] = await Promise.all([
+    reader.singletons.site.read(),
+    reader.singletons.notifications.read(),
+  ]);
+
+  const brandName = site?.brandName || "Joshua Hall";
+  const navLinks = (site?.navLinks ?? []).filter((l) => l.label && l.href) as {
+    label: string;
+    href: string;
+  }[];
+  const contactLabel = site?.contactLabel || "Contact";
+  const footerText = (site?.footerText || "© {year} Joshua Hall").replace(
+    "{year}",
+    String(new Date().getFullYear())
+  );
+  // Only active banners are sent to the client, so disabled/draft announcement
+  // text never appears in the page source.
+  const banners = ((notif?.banners ?? []) as Banner[]).filter(
+    (b) => b.active && b.message
+  );
+
   return (
     <html lang="en" className={`dark ${inter.variable}`}>
       <body className="text-neutral-100">
-        <NavBar />
-        <PageWrapper>{children}</PageWrapper>
+        <NavBar brandName={brandName} links={navLinks} contactLabel={contactLabel} />
+        <PageWrapper>
+          <Notifications banners={banners} />
+          {children}
+        </PageWrapper>
 
         <footer className="mx-auto max-w-4xl px-6 py-10 text-sm text-neutral-500">
-          © {new Date().getFullYear()} Joshua Hall
+          {footerText}
         </footer>
         <SpeedInsights />
       </body>

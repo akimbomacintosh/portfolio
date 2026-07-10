@@ -1,0 +1,14 @@
+{
+  "title": "AC/DC Converter & Booster",
+  "order": 2,
+  "courseCode": "EE 331",
+  "description": "An AC to DC rectifier circuit with a boost converter stage, designed and tested as a final lab project applying semiconductor device theory.",
+  "tags": [
+    "Power Electronics",
+    "Rectifier",
+    "Boost Converter",
+    "Semiconductors"
+  ],
+  "dateEnd": "Jun 2026",
+  "images": []
+}

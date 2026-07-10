@@ -1,0 +1,26 @@
+{
+  "heading": "Coursework",
+  "description": "Learn about the courses I've taken that go beyond the fundamentals. The coursework that I have enjoyed the most - and challenged me more than others - is the basics of circuit theory with prof. Hameed. Applying Laplace transforms to 1st and 2nd order circuits has opened the door into audio design as we participate in labs designing multiband filters.",
+  "courses": [
+    {
+      "code": "EE 233",
+      "title": "Circuit Theory",
+      "description": "Placeholder"
+    },
+    {
+      "code": "CSE 123",
+      "title": "Java III",
+      "description": "Placeholder"
+    },
+    {
+      "code": "EE 331",
+      "title": "Devices & Circuits I",
+      "description": "Currently taking. Check back soon for updates on what I've learned this quarter."
+    },
+    {
+      "code": "EE 271",
+      "title": "Digital Circuits & Systems",
+      "description": "Currently taking. Check back soon for updates on what I've learned this quarter."
+    }
+  ]
+}

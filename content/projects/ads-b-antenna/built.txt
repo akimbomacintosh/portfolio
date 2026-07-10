@@ -1,7 +1,0 @@
-To accomplish my goal, I constructed an ADS-B (Aircraft Dependent Surveillance Broadcast) Antenna to track aircraft locally.
-These antennas, when designed properly, pick up the 1090MHz frequency band, which is what all commercial, private (and sometimes military)
-aircraft broadcast when in-flight. This signal broadcasts a specific type of data when decoded reveals information such as aircraft type, airline,
-destination, origin, speed, altitude, and more. What surprised me was the 1090MHz band was broadcasted for truly anyone to read, just like any other radio frequency
-you could tune to on a radio. I discovered this kind of RF antenna after researching how FlightRadar24 acquires their data. They commonly enhance their tracking model
-with independent antennas scattered around the globe. It was here that I learned that anyone willing to send their antenna data to FlightRadar24
-receives a free business tier subscription to their platform, which motivated me even more to complete the project. 

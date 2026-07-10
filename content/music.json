@@ -1,0 +1,31 @@
+{
+  "heading": "Music",
+  "intro": "Original releases, production, and live audio work.",
+  "releasesLabel": "Releases",
+  "releases": [
+    {
+      "title": "Lavender",
+      "spotifyId": "1gNDB3pzbjpmdLT2McXxpf",
+      "appleMusicAlbumId": "6773102570",
+      "appleMusicTrackId": "6773102571",
+      "appleMusicSlug": "lavender"
+    },
+    {
+      "title": "Ninety-One",
+      "spotifyId": "4bRYib5aJzVIiwSAT9MA3T",
+      "appleMusicAlbumId": "1871769542",
+      "appleMusicTrackId": "1871769543",
+      "appleMusicSlug": "ninety-one"
+    },
+    {
+      "title": "Daydreamer",
+      "spotifyId": "2zymt6vCg5pRoYpPostbpk",
+      "appleMusicAlbumId": "1878100075",
+      "appleMusicTrackId": "1878100290",
+      "appleMusicSlug": "daydreamer"
+    }
+  ],
+  "productionLabel": "Production",
+  "liveSoundLabel": "Live Sound",
+  "emptyState": "Add media in the admin panel"
+}

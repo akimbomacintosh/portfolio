@@ -1,0 +1,22 @@
+{
+  "brandName": "Joshua Hall",
+  "metaTitle": "Joshua Hall",
+  "metaDescription": "Portfolio",
+  "backLabel": "← Back",
+  "contactLabel": "Contact",
+  "navLinks": [
+    { "label": "Coursework", "href": "/coursework" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "Experience", "href": "/experience" },
+    { "label": "Music", "href": "/music" },
+    { "label": "Videography", "href": "/videography" },
+    { "label": "Downloads", "href": "/files" }
+  ],
+  "socials": [
+    { "label": "GitHub", "url": "https://github.com/akimbomacintosh" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/jswhall" },
+    { "label": "Instagram", "url": "https://www.instagram.com/joshuahall.vid/" },
+    { "label": "TikTok", "url": "https://www.tiktok.com/@joshuahall.vid?is_from_webapp=1&sender_device=pc" }
+  ],
+  "footerText": "© {year} Joshua Hall"
+}

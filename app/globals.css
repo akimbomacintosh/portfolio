@@ -100,7 +100,7 @@ body {
 
 @keyframes shimmer-sweep {
   0%   { transform: translateX(-100%); }
-  100% { transform: translateX(250%); }
+  100% { transform: translateX(340%); }
 }
 
 .shimmer-box {
@@ -118,13 +118,33 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(90, 90, 90, 0.18) 50%,
+    rgba(130, 130, 130, 0.14) 50%,
     transparent 100%
   );
   transform: translateX(-100%);
   pointer-events: none;
+  z-index: 2;
 }
 
 .shimmer-box:hover::after {
   animation: shimmer-sweep 0.8s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+/* Accent bar on explore tiles — slides in from the left */
+.tile-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #1034a6, #1D4ED8, #0e7490);
+  transform: translateX(-101%);
+  transform-origin: left;
+  transition: transform 0.55s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 3;
+  pointer-events: none;
+}
+
+a:hover .tile-bar {
+  transform: translateX(0);
 }

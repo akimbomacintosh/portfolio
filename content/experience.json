@@ -1,0 +1,13 @@
+{
+  "heading": "Experience",
+  "intro": "Internships, roles, and the impact I had.",
+  "roles": [
+    {
+      "company": "Placeholder",
+      "role": "Job Title",
+      "dates": "dates",
+      "location": "Seattle, WA",
+      "bullets": ["Placeholder"]
+    }
+  ]
+}

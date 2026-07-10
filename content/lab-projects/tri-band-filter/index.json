@@ -1,0 +1,14 @@
+{
+  "title": "Tri-Band Audio Filter",
+  "order": 1,
+  "courseCode": "EE 233",
+  "description": "A multi-band active audio filter designed using op-amps and passive components, applying Laplace transform analysis for low-pass, band-pass, and high-pass filter stages.",
+  "tags": [
+    "Filter Design",
+    "Op-Amps",
+    "Circuit Theory",
+    "Laplace Transforms"
+  ],
+  "dateEnd": "Mar 2026",
+  "images": []
+}

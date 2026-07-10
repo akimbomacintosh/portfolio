@@ -3,18 +3,20 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const links = [
-  { label: "Coursework", href: "/coursework" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Music", href: "/music" },
-  { label: "Videography", href: "/videography" },
-  { label: "Downloads", href: "/files" },
-];
+type NavLink = { label: string; href: string };
 
-export default function NavBar() {
+export default function NavBar({
+  brandName = "Joshua Hall",
+  links = [],
+  contactLabel = "Contact",
+}: {
+  brandName?: string;
+  links?: NavLink[];
+  contactLabel?: string;
+}) {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isAdmin = pathname.startsWith("/keystatic");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,6 +31,8 @@ export default function NavBar() {
 
   const visible = !isHome || scrolled;
 
+  if (isAdmin) return null;
+
   return (
     <header
       className={`fixed top-0 z-50 w-full border-b border-neutral-800 bg-black/90 backdrop-blur-sm transition-all duration-300 ${
@@ -37,7 +41,7 @@ export default function NavBar() {
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-3">
         <a href="/" className="shrink-0 font-semibold text-neutral-100 hover:text-white">
-          Joshua Hall
+          {brandName}
         </a>
 
         {/* Desktop nav */}
@@ -57,7 +61,7 @@ export default function NavBar() {
             href="/contact"
             className="ml-2 rounded border border-neutral-700 px-3 py-1.5 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
           >
-            Contact
+            {contactLabel}
           </a>
         </nav>
 
@@ -67,7 +71,7 @@ export default function NavBar() {
             href="/contact"
             className="rounded border border-neutral-700 px-3 py-1.5 text-sm text-neutral-300"
           >
-            Contact
+            {contactLabel}
           </a>
           <button
             onClick={() => setMenuOpen((o) => !o)}

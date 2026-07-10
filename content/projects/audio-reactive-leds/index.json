@@ -1,0 +1,26 @@
+{
+  "title": "Audio-Reactive LED Strips",
+  "order": 5,
+  "tagline": "A fun project to turn my bedroom into a club - a small voltage step down module and ESP32 reading audio data from an audio interface to control light patterns based on frequency and amplitude data",
+  "tags": [
+    "Arduino",
+    "FastLED",
+    "Soldering",
+    "Audio Processing",
+    "ESP32"
+  ],
+  "isGroupProject": false,
+  "dateStart": "Apr 2026",
+  "dateEnd": "Present",
+  "overview": "Placeholder",
+  "myRole": "Placeholder",
+  "howItWorks": "Placeholder",
+  "result": "Placeholder",
+  "updates": [],
+  "images": [
+    "/images/projects/audio-reactive-leds/block-diagram.jpg"
+  ],
+  "videos": [
+    "/images/projects/audio-reactive-leds/95A771D3-1989-48DC-AD5E-E5D258B3BEE3.MP4"
+  ]
+}
