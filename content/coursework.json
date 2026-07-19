@@ -1,26 +1,78 @@
 {
   "heading": "Coursework",
-  "description": "Learn about the courses I've taken that go beyond the fundamentals. The coursework that I have enjoyed the most - and challenged me more than others - is the basics of circuit theory with prof. Hameed. Applying Laplace transforms to 1st and 2nd order circuits has opened the door into audio design as we participate in labs designing multiband filters.",
+  "description": "Explore what I've accomplished to complete my degree.",
   "courses": [
     {
-      "code": "EE 233",
+      "code": "PHYS 122",
+      "title": "Electromagnetism",
+      "quarter": "Spring 2025",
+      "description": "Electric and magnetic fields, Gauss's law, Faraday's law, and Maxwell's equations — the physical foundation underlying all of electrical engineering."
+    },
+    {
+      "code": "MATH 207",
+      "title": "Differential Equations",
+      "quarter": "Autumn 2025",
+      "description": "Ordinary differential equations and Laplace transforms, with direct applications to modeling dynamic circuits and physical systems."
+    },
+    {
+      "code": "E E 215",
+      "title": "Introduction to EE",
+      "quarter": "Autumn 2025",
+      "description": "Signals, systems, and basic circuit analysis through hands-on lab work with measurement tools, simulation, and electrical prototyping."
+    },
+    {
+      "code": "E E 233",
       "title": "Circuit Theory",
-      "description": "Placeholder"
+      "quarter": "Winter 2026",
+      "description": "Laplace-domain analysis of first and second-order circuits, frequency response, and the design of analog filters."
+    },
+    {
+      "code": "E E 241",
+      "title": "Programming for Signal Processing",
+      "quarter": "Winter 2026",
+      "description": "FFT, convolution, FIR and IIR filter design, and audio processing — signal processing concepts applied through programming."
     },
     {
       "code": "CSE 123",
-      "title": "Java III",
-      "description": "Placeholder"
+      "title": "Computer Programming III",
+      "quarter": "Winter 2026",
+      "description": "Advanced data structures including trees, graphs, and hash maps, with algorithm analysis and recursive problem-solving."
     },
     {
-      "code": "EE 331",
-      "title": "Devices & Circuits I",
-      "description": "Currently taking. Check back soon for updates on what I've learned this quarter."
-    },
-    {
-      "code": "EE 271",
+      "code": "E E 271",
       "title": "Digital Circuits & Systems",
-      "description": "Currently taking. Check back soon for updates on what I've learned this quarter."
+      "quarter": "Spring 2026",
+      "description": "Boolean algebra, combinational and sequential logic, finite state machines, and digital hardware description using Verilog."
+    },
+    {
+      "code": "E E 331",
+      "title": "Devices & Circuits I",
+      "quarter": "Spring 2026",
+      "description": "Semiconductor physics, p-n junction diodes, MOSFET operation, and small-signal transistor amplifier circuits."
+    },
+    {
+      "code": "IND E 315",
+      "title": "Probability & Statistics for Engineering",
+      "quarter": "Spring 2026",
+      "description": "Probability theory, random variables, distributions, and statistical inference applied to engineering design and analysis."
+    },
+    {
+      "code": "E E 280",
+      "title": "Electromagnetic Waves",
+      "quarter": "Autumn 2026",
+      "description": "Wave propagation, transmission lines, Maxwell's equations in dynamic form, and the electromagnetic basis of wireless communication."
+    },
+    {
+      "code": "E E 469",
+      "title": "Computer Architecture I",
+      "quarter": "Autumn 2026",
+      "description": "Processor organization, instruction set architecture, pipelining, and memory hierarchy in modern computer systems."
+    },
+    {
+      "code": "E E 471",
+      "title": "Introduction to VLSI Systems",
+      "quarter": "Autumn 2026",
+      "description": "CMOS circuit design, transistor-level layout, timing analysis, and the fundamentals of integrated circuit fabrication."
     }
   ]
 }

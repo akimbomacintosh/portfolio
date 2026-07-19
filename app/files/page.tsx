@@ -3,58 +3,67 @@ import config from "../../keystatic.config";
 
 const reader = createReader(process.cwd(), config);
 
+const MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace";
+const GRAD = "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)";
+
+const DOCS = [
+  {
+    label: "Resume",
+    sublabel: "PDF · Updated May 2026",
+    href: "/JH_Resume.pdf",
+    buttonLabel: "Download",
+  },
+];
+
 export default async function Files() {
-  const data = await reader.singletons.files.read();
-  const heading = data?.heading || "Downloads";
-  const intro = data?.intro || "Resume, transcripts, and other downloadable documents.";
-  const documents = (data?.documents ?? []).filter((d) => d.title) as {
-    title: string;
-    note: string;
-    file: string | null;
-  }[];
+  const [data, site] = await Promise.all([
+    reader.singletons.files.read(),
+    reader.singletons.site.read(),
+  ]);
+  const heading   = data?.heading  || "Downloads";
+  const backLabel = site?.backLabel || "← Back";
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-      <h1 className="mt-6 text-5xl font-bold tracking-tight">{heading}<span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)" }}>.</span></h1>
-      <p className="mt-4 max-w-2xl text-neutral-400 leading-8">
-        {intro}
-      </p>
-
-      <div className="mt-12 space-y-12">
-        {documents.map((doc, i) => (
-          <section key={i} className="border-t border-neutral-800 pt-10">
-            <div className="flex items-start justify-between gap-6">
+    <>
+      <section className="relative flex flex-col justify-between" style={{ minHeight: "clamp(400px,65vh,680px)", backgroundImage: "url('/images/videography/library-parade.jpg')", backgroundSize: "cover", backgroundPosition: "center 55%", padding: "clamp(32px,5vh,60px) clamp(24px,5vw,80px)" }}>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.82) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <a href="/" className="uppercase transition-colors hover:text-white" style={{ fontFamily: MONO, color: "rgba(255,255,255,0.5)", fontSize: 12, letterSpacing: "0.28em" }}>{backLabel}</a>
+        </div>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h1 className="font-bold" style={{ margin: 0, color: "#fff", fontSize: "clamp(2.4rem,6vw,5.5rem)", letterSpacing: "-0.035em", lineHeight: 0.95 }}>
+            {heading}<span style={{ backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>.</span>
+          </h1>
+          <p style={{ margin: "18px 0 0", color: "rgba(255,255,255,0.62)", fontSize: "clamp(1rem,1.4vw,1.125rem)", lineHeight: 1.6, maxWidth: "52ch" }}>Resume &amp; other docs.</p>
+        </div>
+      </section>
+      <main style={{ padding: "clamp(32px,5vh,56px) clamp(24px,5vw,80px)" }}>
+        {DOCS.map((doc) => (
+          <div key={doc.label} style={{ marginBottom: "clamp(48px,8vh,80px)" }}>
+            <div className="flex items-center justify-between flex-wrap" style={{ gap: 16, marginBottom: 20 }}>
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-white">{doc.title}</h2>
-                {doc.note && <p className="mt-1 text-sm text-neutral-500">{doc.note}</p>}
+                <p className="m-0 font-semibold" style={{ color: "#ededed", fontSize: 18 }}>{doc.label}</p>
+                {doc.sublabel && (
+                  <p className="m-0" style={{ marginTop: 4, fontFamily: MONO, color: "#525252", fontSize: 12, letterSpacing: "0.08em" }}>{doc.sublabel}</p>
+                )}
               </div>
-              {doc.file && (
-                <a
-                  href={doc.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition-colors hover:border-neutral-500 hover:bg-neutral-900"
-                >
-                  Download ↓
-                </a>
-              )}
+              <a
+                href={doc.href}
+                download
+                className="shrink-0 uppercase transition-colors hover:border-[#525252] hover:text-white"
+                style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.2em", color: "#8a8a8a", border: "1px solid #262626", padding: "10px 22px" }}
+              >
+                ↓ Download
+              </a>
             </div>
-            {doc.file ? (
-              doc.file.toLowerCase().endsWith(".pdf") && (
-                <div className="mt-6">
-                  <iframe
-                    src={doc.file}
-                    title={doc.title}
-                    className="h-[560px] w-full border border-neutral-800 bg-neutral-900"
-                  />
-                </div>
-              )
-            ) : (
-              <div className="mt-6 h-48 w-full border border-dashed border-neutral-800" />
-            )}
-          </section>
+            <iframe
+              src={doc.href}
+              title={doc.label}
+              style={{ width: "100%", height: "clamp(600px, 82vh, 1100px)", border: "1px solid #1f1f1f", display: "block", background: "#0a0a0a" }}
+            />
+          </div>
         ))}
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

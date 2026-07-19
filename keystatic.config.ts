@@ -250,6 +250,7 @@ export default config({
           fields.object({
             code: fields.text({ label: "Course Code", description: "e.g. EE 233" }),
             title: fields.text({ label: "Course Title" }),
+            quarter: fields.text({ label: "Quarter", description: 'e.g. "Winter 2026"' }),
             description: fields.text({ label: "Description", multiline: true }),
           }),
           {
@@ -300,6 +301,31 @@ export default config({
       schema: {
         heading: fields.text({ label: "Page Heading", description: 'e.g. "Videography / Photography"' }),
         intro: fields.text({ label: "Intro line", multiline: true, description: 'e.g. "Edits, shoots, and visual storytelling."' }),
+        instagramSubtext: fields.text({ label: "Instagram — Subtext", description: "Short line shown under the Instagram heading." }),
+        tiktokSubtext: fields.text({ label: "TikTok — Subtext", description: "Short line shown under the Videos heading." }),
+        featuredVideos: fields.array(
+          fields.object({
+            title: fields.text({ label: "Caption (optional)" }),
+            viewCount: fields.text({ label: "View Count (optional)", description: 'e.g. "1.4M"' }),
+            thumbnail: fields.image({
+              label: "Thumbnail",
+              directory: "public/images/videography",
+              publicPath: "/images/videography/",
+              description: "Upload a screenshot of your TikTok video",
+            }),
+            link: fields.text({
+              label: "Link to Video",
+              description: "Full TikTok video URL",
+            }),
+          }),
+          {
+            label: "TikTok Thumbnails",
+            description: "Upload screenshot thumbnails of your TikTok videos. Each becomes a clickable card.",
+            itemLabel: (props) => props.fields.title.value || "Thumbnail",
+          }
+        ),
+        methodsHeading: fields.text({ label: "Process — Heading", description: 'e.g. "My Process."' }),
+        methodsText: fields.text({ label: "Process — Body", multiline: true, description: "How you approach your videography work — gear, style, editing." }),
         works: fields.array(
           fields.object({
             title: fields.text({ label: "Project Title" }),
@@ -311,7 +337,7 @@ export default config({
             }),
           }),
           {
-            label: "Projects",
+            label: "Other Work",
             itemLabel: (props) => props.fields.title.value ?? "Untitled",
           }
         ),

@@ -6,16 +6,40 @@
   "heroButton": "Contact Me",
   "scrollLabel": "Scroll",
   "aboutHeading": "Welcome.",
-  "bioText": "Welcome to the home page of my personal portfolio! I am a senior at the University of Washington, pursuing an Electrical & Computer Engineering degree with a concentration in VLSI. This site serves as a meeting point for all of personal projects, creative ideas, academic coursework, and professional experiences. Take a look at my plane-tracking antenna project in the \"projects\" section, or tune into some of my self-released music in the \"music\" tab. I have a lot to share, so have fun exploring! And if you have any questions, I would love to connect.",
+  "bioText": "Welcome to the home page of my personal portfolio! I am a senior at the University of Washington, pursuing an Electrical & Computer Engineering degree with a capstone in VLSI. This site serves as a meeting point for all of personal projects, creative ideas, academic coursework, and professional experiences. Take a look at my plane-tracking antenna project in the \"projects\" section, tune into some of my self-released music in the \"music\" tab, learn about my experience as an Aircraft Integration Engineering Intern at Panasonic in the \"Experience\" tab, or see some of my viral videos amassing millions of views on the \"Captured Frames\" page. I strive to bring a powerful level of creativity to the engineering world and bring ideas to life using my engineering degree, AI, and creative visions. I have a lot to share, so have fun exploring! And if you have any questions, I would love to connect.",
   "exploreHeading": "Explore.",
   "exploreIntro": "See what I've been up to:",
   "cards": [
-    { "title": "Coursework", "desc": "Explore what I've accomplished to complete my degree.", "href": "/coursework" },
-    { "title": "Projects", "desc": "Completed, in-progress, and future projects. Personal and academic.", "href": "/projects" },
-    { "title": "Experience", "desc": "Learn where I've spent my time to grow my professional skills.", "href": "/experience" },
-    { "title": "Music", "desc": "Discover my music production journey.", "href": "/music" },
-    { "title": "Videography", "desc": "A glimpse into how I see the world.", "href": "/videography" },
-    { "title": "Downloads", "desc": "Resume, transcripts, and useful documents for reference.", "href": "/files" }
+    {
+      "title": "Coursework",
+      "desc": "Explore what I've accomplished to complete my degree.",
+      "href": "/coursework"
+    },
+    {
+      "title": "Projects",
+      "desc": "Completed, in-progress, and future projects. Personal and academic.",
+      "href": "/projects"
+    },
+    {
+      "title": "Experience",
+      "desc": "Learn where I've spent my time to grow my professional skills.",
+      "href": "/experience"
+    },
+    {
+      "title": "Music",
+      "desc": "Discover my music production journey.",
+      "href": "/music"
+    },
+    {
+      "title": "Captured Frames",
+      "desc": "A glimpse into how I see the world.",
+      "href": "/videography"
+    },
+    {
+      "title": "Downloads",
+      "desc": "Resume & other docs.",
+      "href": "/files"
+    }
   ],
   "socialHeading": "Social media."
 }

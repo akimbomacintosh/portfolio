@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes word-from-left {
+  from { opacity: 0; transform: translateX(-30vw); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes word-from-right {
+  from { opacity: 0; transform: translateX(30vw); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-sub {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+
+/* Hero "Contact Me" — subtle, non-distracting */
+.hero-contact {
+  color: #9ca3af;
+  border: 1px solid #e5e7eb;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-contact:hover {
+  color: #4b5563;
+  border-color: #9ca3af;
+}
+
+/* Preferred badge — same gradient scheme as contact button */
+.preferred-badge {
+  position: relative;
+  background: linear-gradient(to right, rgba(16,52,166,0.25), rgba(29,78,216,0.25), rgba(14,116,144,0.25));
+  color: #93c5fd;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 10px 1px rgba(29, 78, 216, 0.35), 0 0 20px 2px rgba(14, 116, 144, 0.15);
+}
+
+.preferred-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to right, #1034a6, #1D4ED8, #0e7490);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Contact Me button — gradient border + hover glow */
+.contact-btn {
+  position: relative;
+  background: transparent;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(to right, #1034a6, #1D4ED8, #0e7490);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.contact-btn:hover {
+  box-shadow: 0 0 16px 2px rgba(29, 78, 216, 0.55), 0 0 32px 4px rgba(14, 116, 144, 0.25);
+}
+
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(340%); }
+}
+
+.shimmer-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(130, 130, 130, 0.14) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shimmer-box:hover::after {
+  animation: shimmer-sweep 0.8s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+/* Accent bar on explore tiles — slides in from the left */
+.tile-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #1034a6, #1D4ED8, #0e7490);
+  transform: translateX(-101%);
+  transform-origin: left;
+  transition: transform 0.55s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 3;
+  pointer-events: none;
+}
+
+a:hover .tile-bar {
+  transform: translateX(0);
+}
+
+/* Videography masonry — responsive column count */
+.vg-masonry {
+  column-count: 3;
+}
+
+@media (max-width: 900px) {
+  .vg-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .vg-masonry {
+    column-count: 1;
+  }
+}

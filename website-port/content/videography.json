@@ -1,0 +1,26 @@
+{
+  "heading": "Videography / Photography",
+  "intro": "A glimpse into how I see the world — city light, coastlines, and the frames I stop to catch. Every shot is tagged with where I stood.",
+  "instagramSubtext": "",
+  "tiktokSubtext": "",
+  "featuredVideos": [
+    { "title": "Downtown Seattle", "viewCount": "47.6045° N · 122.3300° W · Jan 2026", "thumbnail": "/images/videography/skyline-aerial.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Rialto Beach, WA", "viewCount": "47.9214° N · 124.6377° W · Jun 2026", "thumbnail": "/images/videography/bluehour-rock.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Pike Place Market", "viewCount": "47.6094° N · 122.3417° W · Oct 2025", "thumbnail": "/images/videography/public-market.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Capitol Hill rooftop", "viewCount": "47.6205° N · 122.3210° W · Feb 2026", "thumbnail": "/images/videography/sunset-city.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Lake Union · 4th of July", "viewCount": "47.6390° N · 122.3330° W · Jul 2026", "thumbnail": "/images/videography/fireworks.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Hāʻena Beach, Kauaʻi", "viewCount": "22.2199° N · 159.5710° W · Aug 2025", "thumbnail": "/images/videography/palms.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Bay Bridge, San Francisco", "viewCount": "37.7983° N · 122.3778° W · Aug 2025", "thumbnail": "/images/videography/bay-bridge.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Husky Stadium, UW", "viewCount": "47.6503° N · 122.3016° W · Sep 2025", "thumbnail": "/images/videography/husky-stadium.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "UW Quad · cherry blossoms", "viewCount": "47.6570° N · 122.3080° W · Apr 2026", "thumbnail": "/images/videography/blossoms.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Lake Union, Seattle", "viewCount": "47.6500° N · 122.3340° W · Feb 2026", "thumbnail": "/images/videography/skyline-dusk.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Denny Triangle, Seattle", "viewCount": "47.6180° N · 122.3370° W · May 2026", "thumbnail": "/images/videography/downtown-night.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Telemark, Norway", "viewCount": "59.3000° N · 8.5000° E · Mar 2026", "thumbnail": "/images/videography/fjord.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Central Library · parade", "viewCount": "47.6067° N · 122.3325° W · Feb 2026", "thumbnail": "/images/videography/library-parade.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Golden hour, Seattle", "viewCount": "47.6615° N · 122.3341° W · 2026", "thumbnail": "/images/videography/clouds.jpg", "link": "https://www.instagram.com/joshuahall.vid/" },
+    { "title": "Blossoms, Seattle", "viewCount": "47.6588° N · 122.3096° W · Apr 2026", "thumbnail": "/images/videography/blossom-closeup.jpg", "link": "https://www.instagram.com/joshuahall.vid/" }
+  ],
+  "methodsHeading": "My Process.",
+  "methodsText": "",
+  "works": []
+}

@@ -85,12 +85,17 @@ function parseContent(input: string | null | undefined): ContentBlock[] {
   return blocks;
 }
 
+const MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace";
+const GRAD = "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)";
+
 export default async function Projects() {
-  const [projEntries, labEntries, page] = await Promise.all([
+  const [projEntries, labEntries, page, site] = await Promise.all([
     reader.collections.projects.all(),
     reader.collections.labProjects.all(),
     reader.singletons.projectsPage.read(),
+    reader.singletons.site.read(),
   ]);
+  const backLabel = site?.backLabel || "← Back";
 
   const t = {
     heading: page?.heading || "Projects",
@@ -141,9 +146,20 @@ export default async function Projects() {
     .sort((a, b) => a.order - b.order);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-
-      <h1 className="mt-6 text-5xl font-bold tracking-tight">{t.heading}<span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)" }}>.</span></h1>
+    <>
+      <section className="relative flex flex-col justify-between" style={{ minHeight: "clamp(400px,65vh,680px)", backgroundImage: "url('/images/videography/skyline-aerial.jpg')", backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(32px,5vh,60px) clamp(24px,5vw,80px)" }}>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.82) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <a href="/" className="uppercase transition-colors hover:text-white" style={{ fontFamily: MONO, color: "rgba(255,255,255,0.5)", fontSize: 12, letterSpacing: "0.28em" }}>{backLabel}</a>
+        </div>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h1 className="font-bold" style={{ margin: 0, color: "#fff", fontSize: "clamp(2.4rem,6vw,5.5rem)", letterSpacing: "-0.035em", lineHeight: 0.95 }}>
+            {t.heading}<span style={{ backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>.</span>
+          </h1>
+          <p style={{ margin: "18px 0 0", color: "rgba(255,255,255,0.62)", fontSize: "clamp(1rem,1.4vw,1.125rem)", lineHeight: 1.6, maxWidth: "52ch" }}>Completed, in-progress, and future projects. Personal and academic.</p>
+        </div>
+      </section>
+      <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
 
       {/* Jump-to navigation */}
       <nav className="mt-10 border border-neutral-700 bg-neutral-900 p-6">
@@ -300,6 +316,7 @@ export default async function Projects() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

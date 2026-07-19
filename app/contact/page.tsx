@@ -2,6 +2,8 @@ import { createReader } from "@keystatic/core/reader";
 import config from "../../keystatic.config";
 
 const reader = createReader(process.cwd(), config);
+const MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace";
+const GRAD = "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)";
 
 export default async function Contact() {
   const [data, site] = await Promise.all([
@@ -20,15 +22,21 @@ export default async function Contact() {
   }[];
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
-      <a href="/" className="text-sm text-neutral-500 hover:text-neutral-100">{backLabel}</a>
-
-      <h1 className="mt-6 text-5xl font-bold tracking-tight">{heading}<span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(to right, #2563EB, #3B82F6, #0EA5E9)" }}>.</span></h1>
-      <p className="mt-4 max-w-2xl text-neutral-600 leading-8">
-        {intro}
-      </p>
-
-      <div className="mt-12 divide-y divide-neutral-800">
+    <>
+      <section className="relative flex flex-col justify-between" style={{ minHeight: "clamp(400px,65vh,680px)", backgroundImage: "url('/images/videography/bay-bridge.jpg')", backgroundSize: "cover", backgroundPosition: "center 40%", padding: "clamp(32px,5vh,60px) clamp(24px,5vw,80px)" }}>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.82) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <a href="/" className="uppercase transition-colors hover:text-white" style={{ fontFamily: MONO, color: "rgba(255,255,255,0.5)", fontSize: 12, letterSpacing: "0.28em" }}>{backLabel}</a>
+        </div>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h1 className="font-bold" style={{ margin: 0, color: "#fff", fontSize: "clamp(2.4rem,6vw,5.5rem)", letterSpacing: "-0.035em", lineHeight: 0.95 }}>
+            {heading}<span style={{ backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>.</span>
+          </h1>
+          {intro && <p style={{ margin: "18px 0 0", color: "rgba(255,255,255,0.62)", fontSize: "clamp(1rem,1.4vw,1.125rem)", lineHeight: 1.6, maxWidth: "52ch" }}>{intro}</p>}
+        </div>
+      </section>
+      <main className="mx-auto max-w-5xl px-6 py-10 text-[17px]">
+      <div className="divide-y divide-neutral-800">
         {contacts.map((c) => {
           const buttonLabel =
             c.buttonLabel || (c.href.startsWith("mailto") ? "Send email" : "Visit");
@@ -67,5 +75,6 @@ export default async function Contact() {
         })}
       </div>
     </main>
+    </>
   );
 }
