@@ -106,27 +106,39 @@ export default async function Home() {
 
   return (
     <div style={{ background: "#000", color: "#ededed" }}>
-      {/* ── White hero ─────────────────────────────────────────── */}
+      {/* ── Video hero ─────────────────────────────────────────── */}
       <section
         className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
-        style={{ background: "#fff", padding: "0 4vw" }}
+        style={{ background: "#000", padding: "0 4vw" }}
       >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ zIndex: 0 }}
+        >
+          <source src="/videos/background.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0" style={{ zIndex: 1, background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.55) 100%)" }} />
+
         <p
           className="m-0 uppercase"
-          style={{ position: "absolute", top: "clamp(18px,3vh,32px)", left: "clamp(20px,5vw,48px)", fontFamily: MONO, color: "#b8bcc2", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
+          style={{ position: "absolute", top: "clamp(18px,3vh,32px)", left: "clamp(20px,5vw,48px)", zIndex: 2, fontFamily: MONO, color: "rgba(255,255,255,0.65)", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
         >
           Portfolio
         </p>
         <p
           className="m-0 uppercase"
-          style={{ position: "absolute", top: "clamp(18px,3vh,32px)", right: "clamp(20px,5vw,48px)", fontFamily: MONO, color: "#b8bcc2", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
+          style={{ position: "absolute", top: "clamp(18px,3vh,32px)", right: "clamp(20px,5vw,48px)", zIndex: 2, fontFamily: MONO, color: "rgba(255,255,255,0.65)", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
         >
           Seattle · 2026
         </p>
 
         <h1
-          className="m-0 text-center font-bold"
-          style={{ whiteSpace: "nowrap", lineHeight: 0.9, letterSpacing: "-0.035em", color: "#0a0a0a", fontSize: "clamp(3.4rem, 15vw, 15rem)" }}
+          className="relative m-0 text-center font-bold"
+          style={{ zIndex: 2, whiteSpace: "nowrap", lineHeight: 0.9, letterSpacing: "-0.035em", color: "#fff", fontSize: "clamp(3.4rem, 15vw, 15rem)" }}
         >
           <span style={{ display: "inline-block", opacity: 0, animation: "word-from-left 0.95s cubic-bezier(0.16,1,0.3,1) 0.05s forwards" }}>
             {firstName}
@@ -142,8 +154,8 @@ export default async function Home() {
         </h1>
 
         <p
-          className="text-center uppercase"
-          style={{ margin: "clamp(24px,3.5vh,38px) 0 0", fontFamily: MONO, color: "#6b7280", fontSize: "clamp(0.66rem,1.25vw,0.95rem)", letterSpacing: "0.32em", opacity: 0, animation: "fade-in-sub .9s ease 1.05s forwards" }}
+          className="relative text-center uppercase"
+          style={{ zIndex: 2, margin: "clamp(24px,3.5vh,38px) 0 0", fontFamily: MONO, color: "rgba(255,255,255,0.75)", fontSize: "clamp(0.66rem,1.25vw,0.95rem)", letterSpacing: "0.32em", opacity: 0, animation: "fade-in-sub .9s ease 1.05s forwards" }}
         >
           <span style={{ whiteSpace: "nowrap" }}>{subtitleLine1}</span>
           &nbsp;·&nbsp;
@@ -152,10 +164,10 @@ export default async function Home() {
 
         <div
           className="absolute flex flex-col items-center"
-          style={{ bottom: 30, gap: 7, opacity: 0, animation: "fade-in-sub .9s ease 1.7s forwards" }}
+          style={{ bottom: 30, gap: 7, zIndex: 2, opacity: 0, animation: "fade-in-sub .9s ease 1.7s forwards" }}
         >
-          <span className="uppercase" style={{ fontFamily: MONO, color: "#c4c8ce", fontSize: 10, letterSpacing: "0.24em" }}>{scrollLabel}</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#c4c8ce" strokeWidth="1.5" className="h-4 w-4 animate-bounce" aria-hidden="true">
+          <span className="uppercase" style={{ fontFamily: MONO, color: "rgba(255,255,255,0.7)", fontSize: 10, letterSpacing: "0.24em" }}>{scrollLabel}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" className="h-4 w-4 animate-bounce" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
@@ -163,10 +175,10 @@ export default async function Home() {
 
       {/* ── Welcome / About ────────────────────────────────────── */}
       <section style={{ padding: "clamp(64px,10vh,120px) clamp(24px,5vw,80px)" }}>
-        <div className="items-center" style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,0.9fr)", gap: "clamp(40px,6vw,88px)", maxWidth: 1280, margin: "0 auto" }}>
+        <div className="items-center bio-section" style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,0.9fr)", gap: "clamp(40px,6vw,88px)", maxWidth: 1280, margin: "0 auto" }}>
           <div>
             <h2 className="font-semibold" style={{ margin: "0", color: "#ededed", fontSize: "clamp(30px,3.6vw,50px)", letterSpacing: "-0.025em", lineHeight: 1.12, textWrap: "pretty" }}>
-              A senior making engineering something beautiful.
+              A senior making engineering something beautiful<span style={{ backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>.</span>
             </h2>
             <p style={{ margin: "26px 0 0", color: "#8a8a8a", fontSize: "clamp(16px,1.4vw,18px)", lineHeight: 1.85, maxWidth: "60ch", textWrap: "pretty" }}>{bioText}</p>
             <div className="flex flex-wrap" style={{ gap: 28, marginTop: 36 }}>

@@ -186,3 +186,38 @@ a:hover .explore-btn {
     column-count: 1;
   }
 }
+
+/* ── Mobile-only overrides (≤639px) ─────────────────────────────── */
+/* These only fire on phones; desktop is completely unaffected.       */
+
+/* Bio section — stack columns vertically */
+@media (max-width: 639px) {
+  .bio-section {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Photo grid — collapse 3 flex columns to 1 */
+@media (max-width: 639px) {
+  .vg-photo-grid {
+    flex-direction: column !important;
+  }
+  .vg-photo-grid > div {
+    flex: none !important;
+    width: 100% !important;
+  }
+}
+
+/* Inner page photo heroes — shorter on small screens */
+@media (max-width: 639px) {
+  .page-hero {
+    min-height: 260px !important;
+  }
+}
+
+/* Photo tile captions — smaller text so it doesn't cover the whole image */
+@media (max-width: 639px) {
+  .vg-tile-caption p:first-child { font-size: 13px !important; }
+  .vg-tile-caption p:last-child  { font-size: 9.5px !important; }
+}
+

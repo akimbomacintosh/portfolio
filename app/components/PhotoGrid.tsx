@@ -32,7 +32,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
 
   return (
     <>
-      <div style={{ maxWidth: 1440, margin: "0 auto", display: "flex", gap: 14, alignItems: "flex-start" }}>
+      <div className="vg-photo-grid" style={{ maxWidth: 1440, margin: "0 auto", display: "flex", gap: 14, alignItems: "flex-start" }}>
         {[0, 1, 2].map((col) => (
           <div key={col} style={{ flex: 1, display: "flex", flexDirection: "column", gap: 14 }}>
             {photos
@@ -62,7 +62,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 38%, rgba(0,0,0,0) 62%)" }} />
-                  <figcaption className="absolute" style={{ left: 14, right: 14, bottom: 16 }}>
+                  <figcaption className="vg-tile-caption absolute" style={{ left: 14, right: 14, bottom: 16 }}>
                     {p.title && <p className="m-0" style={{ color: "#fff", fontSize: 15, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2 }}>{p.title}</p>}
                     {p.viewCount && <p className="m-0" style={{ marginTop: 5, fontFamily: MONO, color: "rgba(255,255,255,0.55)", fontSize: 10.5, letterSpacing: "0.06em" }}>{p.viewCount}</p>}
                   </figcaption>

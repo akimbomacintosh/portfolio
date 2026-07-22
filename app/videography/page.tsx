@@ -46,6 +46,7 @@ const socials      = site?.socials ?? [];
       {/* ── Photo grid ───────────────────────────────────────── */}
       {photos.length > 0 && (
         <section style={{ padding: "clamp(28px,4vh,48px) clamp(24px,5vw,80px) clamp(56px,9vh,100px)" }}>
+          <p className="m-0 uppercase" style={{ fontFamily: MONO, color: "#525252", fontSize: 12, letterSpacing: "0.28em", marginBottom: "clamp(20px,3vh,32px)" }}>Photo archive</p>
           <PhotoGrid photos={photos} />
         </section>
       )}
@@ -53,7 +54,7 @@ const socials      = site?.socials ?? [];
       {/* ── Moving image / socials ───────────────────────────── */}
       <section style={{ borderTop: "1px solid #1a1a1a", padding: "clamp(56px,9vh,104px) clamp(24px,5vw,80px)" }}>
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <p className="m-0 uppercase" style={{ fontFamily: MONO, color: "#525252", fontSize: 12, letterSpacing: "0.28em" }}>Moving image</p>
+          <p className="m-0 uppercase" style={{ fontFamily: MONO, color: "#525252", fontSize: 12, letterSpacing: "0.28em" }}>Videos</p>
           <h2 className="font-semibold" style={{ margin: "16px 0 0", color: "#ededed", fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05 }}>
             Reels &amp; edits<span style={{ backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>.</span>
           </h2>

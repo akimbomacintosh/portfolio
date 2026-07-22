@@ -1,5 +1,6 @@
 {
-  "title": "Network Management w/ Multiband Optimizations & Pi-Hole",
+  "title": "Personal NAS Server",
+  "draft": false,
   "order": 4,
   "tagline": "Home network management using a Raspberry Pi to run network-wide ad blocking and DNS management",
   "tags": [
@@ -8,6 +9,7 @@
     "DNS",
     "Networking"
   ],
+  "links": [],
   "isGroupProject": false,
   "dateStart": "Sep 2025",
   "dateEnd": "Present",

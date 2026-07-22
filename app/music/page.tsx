@@ -12,7 +12,7 @@ export default async function Music() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative flex flex-col justify-between" style={{ minHeight: "clamp(400px,65vh,680px)", backgroundImage: "url('/images/videography/sunset-city.jpg')", backgroundSize: "cover", backgroundPosition: "center 72%", padding: "clamp(32px,5vh,60px) clamp(24px,5vw,80px)" }}>
+      <section className="page-hero relative flex flex-col justify-between" style={{ minHeight: "clamp(400px,65vh,680px)", backgroundImage: "url('/images/videography/sunset-city.jpg')", backgroundSize: "cover", backgroundPosition: "center 72%", padding: "clamp(32px,5vh,60px) clamp(24px,5vw,80px)" }}>
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.86) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1 }}>
           <a href="/" className="uppercase transition-colors hover:text-white" style={{ fontFamily: "ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace", color: "rgba(255,255,255,0.5)", fontSize: 12, letterSpacing: "0.28em" }}>

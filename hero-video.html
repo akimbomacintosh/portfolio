@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joshua Hall — Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+  /* ---- HERO SECTION ---- */
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #05060a;      /* shows if video/poster fail to load */
+  }
+
+  /* Background video fills the section and is cropped to fit */
+  .hero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* crop, don't stretch */
+    z-index: 0;
+  }
+
+  /* Dark overlay so text stays readable over bright flame */
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(3, 4, 8, 0.85) 0%,
+      rgba(3, 4, 8, 0.35) 45%,
+      rgba(3, 4, 8, 0.25) 100%
+    );
+  }
+
+  .hero__content {
+    position: absolute;
+    z-index: 2;
+    left: 8%;
+    bottom: 14%;
+    color: #f4f6ff;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.85);
+  }
+
+  .hero__name    { font-size: clamp(32px, 6vw, 68px); font-weight: 700; letter-spacing: 0.01em; }
+  .hero__tagline { font-size: clamp(15px, 2vw, 22px); opacity: 0.85; margin-top: 10px; font-weight: 400; }
+
+  .hero__cta {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 12px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    color: #f4f6ff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .hero__cta:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; }
+
+  /* Small label top-right (optional flavor) */
+  .hero__label {
+    position: absolute; z-index: 2; top: 24px; right: 28px;
+    font-size: 11px; letter-spacing: 0.16em; color: #9fb0d0; opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <!--
+      STEP 1: Download a clip (DVIDS = public domain, Pexels/Pixabay = free).
+      STEP 2: Put the file next to this HTML, e.g. afterburner.mp4
+      STEP 3: Grab one still frame as poster.jpg (shows instantly while video loads).
+      Replace the two paths below.
+    -->
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="poster.jpg">
+      <source src="afterburner.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero__overlay"></div>
+
+    <div class="hero__label">AFTERBURNER</div>
+
+    <div class="hero__content">
+      <div class="hero__name">Joshua Hall</div>
+      <div class="hero__tagline">Electrical &amp; Computer Engineering &middot; Avionics</div>
+      <a class="hero__cta" href="#work">View my work</a>
+    </div>
+  </section>
+
+  <!-- rest of your site goes below -->
+
+</body>
+</html>
