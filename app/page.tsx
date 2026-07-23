@@ -124,20 +124,20 @@ export default async function Home() {
         <div className="absolute inset-0" style={{ zIndex: 1, background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.55) 100%)" }} />
 
         <p
-          className="m-0 uppercase"
+          className="hero-corner-label m-0 uppercase"
           style={{ position: "absolute", top: "clamp(18px,3vh,32px)", left: "clamp(20px,5vw,48px)", zIndex: 2, fontFamily: MONO, color: "rgba(255,255,255,0.65)", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
         >
           Portfolio
         </p>
         <p
-          className="m-0 uppercase"
+          className="hero-corner-label m-0 uppercase"
           style={{ position: "absolute", top: "clamp(18px,3vh,32px)", right: "clamp(20px,5vw,48px)", zIndex: 2, fontFamily: MONO, color: "rgba(255,255,255,0.65)", fontSize: 11, letterSpacing: "0.3em", opacity: 0, animation: "fade-in-sub .9s ease 1.3s forwards" }}
         >
           Seattle · 2026
         </p>
 
         <h1
-          className="relative m-0 text-center font-bold"
+          className="hero-name relative m-0 text-center font-bold"
           style={{ zIndex: 2, whiteSpace: "nowrap", lineHeight: 0.9, letterSpacing: "-0.035em", color: "#fff", fontSize: "clamp(3.4rem, 15vw, 15rem)" }}
         >
           <span style={{ display: "inline-block", opacity: 0, animation: "word-from-left 0.95s cubic-bezier(0.16,1,0.3,1) 0.05s forwards" }}>
@@ -154,12 +154,12 @@ export default async function Home() {
         </h1>
 
         <p
-          className="relative text-center uppercase"
+          className="hero-subtitle relative text-center uppercase"
           style={{ zIndex: 2, margin: "clamp(24px,3.5vh,38px) 0 0", fontFamily: MONO, color: "rgba(255,255,255,0.75)", fontSize: "clamp(0.66rem,1.25vw,0.95rem)", letterSpacing: "0.32em", opacity: 0, animation: "fade-in-sub .9s ease 1.05s forwards" }}
         >
-          <span style={{ whiteSpace: "nowrap" }}>{subtitleLine1}</span>
-          &nbsp;·&nbsp;
-          <span style={{ whiteSpace: "nowrap" }}>{subtitleLine2}</span>
+          <span className="hero-subtitle-part" style={{ whiteSpace: "nowrap" }}>{subtitleLine1}</span>
+          <span className="hero-subtitle-dot">&nbsp;·&nbsp;</span>
+          <span className="hero-subtitle-part" style={{ whiteSpace: "nowrap" }}>{subtitleLine2}</span>
         </p>
 
         <div

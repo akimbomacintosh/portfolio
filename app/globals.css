@@ -221,3 +221,31 @@ a:hover .explore-btn {
   .vg-tile-caption p:last-child  { font-size: 9.5px !important; }
 }
 
+/* Hero name — smaller fluid scale so "Firstname Lastname." fits without clipping */
+@media (max-width: 639px) {
+  .hero-name {
+    font-size: clamp(2.1rem, 12.5vw, 3.6rem) !important;
+  }
+}
+
+/* Hero corner labels — smaller + tighter tracking so they don't run off-screen */
+@media (max-width: 639px) {
+  .hero-corner-label {
+    font-size: 9px !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+
+/* Hero subtitle — stack the two lines instead of forcing one unbroken row */
+@media (max-width: 639px) {
+  .hero-subtitle {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+  .hero-subtitle-dot {
+    display: none !important;
+  }
+}
+
